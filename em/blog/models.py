@@ -6,7 +6,7 @@ from wagtail.admin.panels import FieldPanel
 from wagtailseo.models import SeoMixin
 
 
-class HomePage(SeoMixin, Page):
+class BlogPage(SeoMixin, Page):
     promote_panels = SeoMixin.seo_panels
     body = RichTextField(blank=True)
 

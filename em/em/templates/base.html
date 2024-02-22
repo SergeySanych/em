@@ -1,7 +1,7 @@
-{% load static wagtailcore_tags wagtailuserbar %}
+{% load static wagtailcore_tags menu_tags wagtailuserbar %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="utf-8" />
         <title>
@@ -24,7 +24,25 @@
         {% endif %}
 
         {# Global stylesheets #}
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/uikit.css' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'css/em.css' %}">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+        <!-- UIkit JS -->
+        <script src="{% static 'js/uikit.js' %}"></script>
+        <script src="{% static 'js/uikit-icons.js' %}"></script>
+
+
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
@@ -33,6 +51,67 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+        <!-- Flat menu -->
+        <div uk-sticky>
+            <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
+                <div class="uk-navbar-center">
+                    {% flat_menu 'fm' max_levels=3 template="flat_menu.html" sub_menu_templates="flat_menu_2.html, flat_menu_3.html" show_menu_heading=False fall_back_to_default_site_menus=True %}
+                </div>
+            </nav>
+        </div>
+
+ <!-- Header -->
+    <div class="uk-section uk-section-default uk-section-xsmall">
+        <div class="uk-container uk-container-large">
+            <div class="uk-grid-small" uk-grid>
+                <div class="uk-width-1-1 uk-width-1-2@m">
+                    <div>
+                            <img src="/media/images/dis/newlogo.png" width="320" alt="Image">
+                    </div>
+                    <div>
+                        Авторская школа английского языка Жаннат Куанышевны.
+                    </div>
+                </div>
+                <div class="uk-width-1-1 uk-width-1-2@m">
+                    <div>
+                        +7 (777) 2222 590
+                    </div>
+                    <div>
+                        Отправить сообщение: <img alt="whatsapp" src="/media/images/dis/iwhatsapp.png" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--        &lt;!&ndash; Header &ndash;&gt;-->
+<!--        <div class="uk-section uk-section-default uk-section-xsmall">-->
+<!--            <div class="uk-container uk-container-large">-->
+<!--                <div class="uk-grid-small" uk-grid>-->
+<!--                    <div class="uk-flex uk-width-1-1 uk-width-expand@m uk-flex-middle">-->
+<!--                        <div class="uk-flex uk-width-1-1 uk-width-3-6@m uk-flex-middle">-->
+<!--                            <img src="/media/images/dis/newlogo.png" width="320" alt="Image">-->
+<!--                        </div>-->
+
+<!--                        <div class="uk-width-expand uk-flex-middle" uk-grid>-->
+<!--                            <div>-->
+<!--                                Авторская школа английского языка Жаннат Куанышевны.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="uk-flex uk-width-1-1 uk-width-3-6@m uk-flex-middle">-->
+<!--                        +7 (777) 2222 590-->
+<!--                    </div>-->
+<!--                    <div class="uk-flex uk-width-1-1 uk-width-1-2@m uk-flex-middle uk-flex-right">-->
+<!--                        <div>-->
+<!--                            Отправить сообщение: <img alt="UNESCO Logo" src="/media/images/dis/iwhatsapp.png">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
 
         {% block content %}{% endblock %}
 

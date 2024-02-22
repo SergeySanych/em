@@ -1,0 +1,105 @@
+/* Settings for all site */
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .9375rem;
+    font-weight: normal;
+    line-height: 1.7;
+    color: #003049;
+    background-color: #FDF0D5;
+}
+
+
+  /* Site colors */
+.uk-section-default {
+    background: #FDF0D5;
+}
+.cDarkRed {
+    color: #780000;
+}
+
+.cRed {
+    color: #C1121F;
+}
+
+.cCream {
+    color: #FDF0D5;
+}
+
+.cDarkBlue {
+    color: #003049;
+}
+
+.cLightBlue {
+    color: #D1E8F7;
+}
+
+
+  /* flat menu */
+  /* layer parameters  */
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    height: 50px;
+    background-color: #003049;
+}
+
+/* cell parameters  */
+.uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
+    column-gap: .25em;
+    min-height: 50px;
+    font-size: .9375rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #FDF0D5;
+}
+
+/*
+ * Hover
+ * Apply hover style also if dropdown is opened
+ */
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a[aria-expanded="true"] {
+  color: #D1E8F7;
+}
+/* OnClick */
+.uk-navbar-nav > li > a:active {
+  color: #D1E8F7;
+}
+/* Active */
+.uk-navbar-nav > li.uk-active > a {
+  color: #9AC3DD;
+}
+
+/* dropdown parameters  */
+.uk-navbar-dropdown {
+    /*display: none;
+    position: absolute;*/
+    width: 240px;
+    padding: 20px;
+    background: #003049;
+    color: #FDF0D5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    font-size: .875rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+
+/*
+ * Items
+ */
+.uk-navbar-dropdown-nav > li > a {
+  color: #FDF0D5;
+}
+/* Hover */
+.uk-navbar-dropdown-nav > li > a:hover {
+  color: #D1E8F7;
+}
+/* Active */
+.uk-navbar-dropdown-nav > li.uk-active > a {
+  color: #D1E8F7;
+}
+
+
+  /* headers */
+h1  {
+    font-family: 'Roboto Condensed', sans-serif;
+}
