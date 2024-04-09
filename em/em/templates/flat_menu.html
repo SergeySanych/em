@@ -1,13 +1,8 @@
-{% load menu_tags i18n wagtailcore_tags %}
+{% load menu_tags wagtailcore_tags %}
 <ul class="uk-navbar-nav uk-grid-small" uk-grid>
 
     <li>
-            {% if LANGUAGE_CODE == "ru" %}
-                <a href="/ru/" uk-icon="icon: home"></a>
-            {% else %}
-                <a href="/en/" uk-icon="icon: home"></a>
-            {% endif %}
-
+                <a href="/" uk-icon="icon: home"></a>
     </li>
 
 {% for item in menu_items %}
@@ -23,38 +18,11 @@
 
     </li>
 {% endfor %}
+        <li class="uk-flex uk-flex-middle testpadding">
+        <!-- Testing -->
+            <a class="b-test uk-button uk-button-default" href="/test/">Тестирование</a>
+        </li>
     <li><a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav-primary" href="#"></a></li>
 
-    <li class="uk-flex uk-flex-middle">
-        <!-- Переключение языков -->
-        {% if page %}
-            {% for translation in page.get_translations.live %}
-                {% get_language_info for translation.locale.language_code as lang %}
-                <a href="{% pageurl translation %}" rel="alternate" hreflang="{{ lang.code }}" class="icon-button">
-                    {{ lang.code }}
-                </a>
-            {% endfor %}
-        {% else %}
-            {% if LANGUAGE_CODE == "ru" %}
-                <a href="/en/search" rel="alternate" hreflang="{{ LANGUAGE_CODE }}" class="icon-button">
-                    en
-                </a>
-            {% else %}
-                <a href="/ru/search" rel="alternate" hreflang="{{ LANGUAGE_CODE }}" class="icon-button">
-                    ru
-                </a>
 
-            {% endif %}
-        {% endif %}
-
-    </li>
-    <li class="uk-flex uk-flex-middle">
-        <!-- Кнопка поиск -->
-            {% if LANGUAGE_CODE == "ru" %}
-                <a class="icon-button" href="/ru/search" uk-icon="icon: search"></a>
-            {% else %}
-                <a class="icon-button" href="/en/search" uk-icon="icon: search"></a>
-            {% endif %}
-
-    </li>
 </ul>

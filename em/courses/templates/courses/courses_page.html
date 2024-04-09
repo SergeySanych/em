@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags why_tags form_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -8,5 +8,117 @@
 {% endblock extra_css %}
 
 {% block content %}
- {{ page.course_shorttext|richtext }}
+<!-- Course first screen  -->
+    <div class="uk-section uk-section-default uk-section-small uk-padding-remove-top">
+        <div class="uk-background-cover uk-background-blend-multiply uk-background-primary uk-background-top-center"
+             {% image page.course_bgimage fill-1920x800 as tmp_bg %}
+             style="background-image: url( {{ tmp_bg.url }} );">
+            <div class="uk-container uk-container-large" >
+                <div class="uk-padding-large courses-fs" uk-grid>
+                    <div class="uk-width-1-1 ">
+                        <div class="uk-text-center">
+                            <h1>{{ page.course_name }}</h1>
+                        </div>
+                        <div class="uk-text-center">
+                            <h2>{{ page.course_subtitle }}</h2>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-1 ">
+                        <div class="uk-flex uk-flex-center">
+                            <a class="uk-button uk-button-default uk-margin-large-bottom uk-margin-small-top" href=""><span uk-icon="forward"> </span> Узнайте стоимость и расписание</a>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto">
+                            <span class="material-symbols-outlined">{{ page.course_icon1 }}</span>
+                        </div>
+                        <div class="uk-width-expand">
+                            {{ page.course_text1|richtext }}
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto">
+                            <span class="material-symbols-outlined">{{ page.course_icon2 }}</span>
+                        </div>
+                        <div class="uk-width-expand">
+                            {{ page.course_text2|richtext }}
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto">
+                            <span class="material-symbols-outlined">{{ page.course_icon3 }}</span>
+                        </div>
+                        <div class="uk-width-expand">
+                            {{ page.course_text3|richtext }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% include_block page.course_body %}
+
+{% why %}
+
+<!-- Contact form -->
+
+{% contact_block %}
+
+
+ <!-- Reviews -->
+    <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top uk-margin-medium-top">
+        <div class="uk-container uk-container-large">
+            <div class="blueborder reviewstext uk-padding">
+                    <div uk-grid>
+                        <div class="uk-margin-remove-top uk-width-1-1 ">
+                            <div>
+                                <h3>Отзывы наших студентов</h3>
+                            </div>
+                        </div>
+                        <div class="">
+                            {% with reviews=page.course_reviews.all %}
+                                {% if reviews %}
+                                    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider="autoplay: false; autoplay-interval: 3000; pause-on-hover: true ">
+                                        <ul class="uk-slider-items uk-child-width-1-1" uk-grid>
+                                            {% for review in reviews %}
+                                            <li>
+                                                <div uk-grid>
+                                                    <div class="uk-width-1-3@m">
+                                                        <div class="uk-flex uk-flex-center">
+                                                            {% image review.review_photo fill-250x250 class="uk-border-circle" %}
+                                                        </div>
+                                                        <div class="uk-padding-small uk-flex uk-flex-center">
+                                                            <h4>{{ review.review_name }}</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-2-3@m">
+                                                        <div class="">
+                                                            <h4>Из отзыва</h4>
+                                                            <p class="uk-margin-remove">{{ review.review_shorttext|richtext }}</p>
+                                                            <h4>Результат обучения</h4>
+                                                            <p class="uk-margin-remove">{{ review.review_result|richtext }}</p>
+                                                            <a href="{% pageurl review %}">Читать отзыв полностью</a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+                                    </div>
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+{% banner %}
 {% endblock content %}

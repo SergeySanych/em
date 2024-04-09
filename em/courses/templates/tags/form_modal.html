@@ -1,0 +1,39 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% if form %}
+<!-- This is a button toggling the modal with the default close button
+<button class="uk-button uk-button-send nunito-font uk-margin-small-right" type="button" uk-toggle="target: #modal-close-default">
+    {% if LANGUAGE_CODE == "ru" %}Отправить сообщение{% else %}Send message{% endif %}
+</button>
+-->
+
+<!-- This is the modal with the default close button -->
+<div id="modal-close-default" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body modalform redborder">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <form action="{% pageurl form_page %}" method="POST">
+            {% csrf_token %}
+            <div class="uk-margin" aria-required="true">
+                <input class="uk-input" type="text" name="u0418u043cu044f" maxlength="255" required=""
+                       id="id_u0418u043cu044f" placeholder="Ваше имя" aria-label="Input">
+            </div>
+
+            <div class="uk-margin" aria-required="true">
+                <input class="uk-input" type="text" name="u0422u0435u043bu0435u0444u043eu043d" maxlength="255" required=""
+                       id="id_u0422u0435u043bu0435u0444u043eu043d" placeholder="Телефон" aria-label="Input">
+            </div>
+
+            <div class="uk-margin" aria-required="true">
+                <input class="uk-input" type="email" name="u041fu043eu0447u0442u0430" required="" id="id_u041fu043eu0447u0442u0430" placeholder="e-mail"
+                       aria-label="Input">
+            </div>
+
+            <input name="source-page-id" type="hidden" value="{% if page.pk %}{{ page.pk }}{% else %}0{% endif %}">
+            <input class="uk-button uk-button-default nunito-font" type="submit" value="Отправить сообщение">
+        </form>
+
+
+    </div>
+</div>
+
+{% endif %}

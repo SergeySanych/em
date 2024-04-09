@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+
+{% include_block page.review_bodytop %}
+{% include_block page.review_bodybottom %}
+{% endblock content %}

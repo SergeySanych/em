@@ -24,12 +24,8 @@
         {% endif %}
 
         {# Global stylesheets #}
-        <!-- CSS -->
-        <link rel="stylesheet" href="{% static 'css/normalize.css' %}"/>
-        <link rel="stylesheet" href="{% static 'css/uikit.css' %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/em.css' %}">
 
-        <!-- Fonts -->
+                <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,6 +37,13 @@
         <!-- UIkit JS -->
         <script src="{% static 'js/uikit.js' %}"></script>
         <script src="{% static 'js/uikit-icons.js' %}"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'css/normalize.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/uikit.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/em.css' %}">
+
+
 
 
 
@@ -59,6 +62,13 @@
                 </div>
             </nav>
         </div>
+        <!-- OffCanvas menu -->
+    <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+                {% flat_menu 'fm' max_levels=3 template="modal_menu.html" sub_menu_templates="modal_menu_2.html" show_menu_heading=False fall_back_to_default_site_menus=True %}
+        </div>
+    </div>
 
  <!-- Header -->
     <div class="uk-section uk-section-default uk-section-xsmall">

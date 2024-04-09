@@ -1,0 +1,22 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+ <!-- banner -->
+    <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top">
+        <div class="uk-container uk-container-large">
+            <div class="uk-background-cover"
+                 style="background-image: url(/media/images/dis/bgredhoriz2.jpg);">
+                    <div class="uk-grid-medium uk-padding" uk-grid>
+                        <div class="uk-width-1-1">
+                            <div class="uk-text-center">
+                                <p class="banner uk-margin-small">{{ homefirst.bannertext }}</p>
+                            </div>
+                             <div class="uk-flex uk-flex-center fstext">
+                                <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-top" href=""><span uk-icon="forward"> </span> {{ homefirst.bannercta }}</a>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>

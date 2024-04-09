@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags why_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+{% endblock extra_css %}
+
+{% block content %}
+
+ <!-- Reviews -->
+    <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top uk-margin-medium-top">
+        <div class="uk-container uk-container-large">
+            <div class="blueborder reviewstext uk-padding">
+                    <div uk-grid>
+                        <div class="uk-margin-remove-top uk-width-1-1 ">
+                            <div>
+                                <h3>{{ page.form_landing_h3 }}</h3>
+                            </div>
+                        </div>
+                        <div class="">
+                            {{ page.form_thank_you_text | richtext }}
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}

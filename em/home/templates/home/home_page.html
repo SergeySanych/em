@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags form_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -12,7 +12,7 @@
  <!-- first screen -->
     <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top">
         <div class="uk-container uk-container-large">
-            <div class="uk-background-cover uk-background-blend-multiply uk-background-primary"
+            <div class="uk-background-cover"
                  style="background-image: url(/media/images/dis/bgredhoriz2.jpg);">
                     <div class="uk-grid-medium fstext" uk-grid>
                         <div class="uk-width-1-1 uk-width-2-3@l uk-width-2-3@m">
@@ -174,6 +174,8 @@
         </div>
     </div>
 </div>
+
+{% contact_block %}
 
  <!-- Reviews -->
     <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top uk-margin-medium-top">

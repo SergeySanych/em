@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -8,5 +8,67 @@
 {% endblock extra_css %}
 
 {% block content %}
- {{ page.body|richtext }}
+<!-- Blog first screen  -->
+<div class="uk-section uk-section-small uk-padding-remove-top">
+    <div class="uk-background-cover uk-background-blend-multiply uk-background-primary uk-background-center-center"
+         {% image page.blog_bgimage fill-1920x800 as tmp_bg %}
+         style="background-image: url( {{ tmp_bg.url }} );">
+        <div class="uk-container uk-container-large" >
+            <div class="uk-padding-large courses-fs" uk-grid>
+                <div class="uk-width-1-1 ">
+                    <div class="uk-text-center uk-padding-remove-top uk-padding">
+                        <h1>{{ page.blog_title_h1 }}</h1>
+                    </div>
+                    <div class="uk-text-center">
+                        {% if page.blog_subtitle %} <h2>{{ page.blog_subtitle }}</h2>{% endif %}
+                    </div>
+                </div>
+            {% if page.blog_blog  == False %}
+                {% if page.blog_icon1 %}
+                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto">
+                            <span class="material-symbols-outlined">{{ page.blog_icon1 }}</span>
+                        </div>
+                        <div class="uk-width-expand">
+                            {{ page.blog_text1|richtext }}
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto">
+                            <span class="material-symbols-outlined">{{ page.blog_icon2 }}</span>
+                        </div>
+                        <div class="uk-width-expand">
+                            {{ page.blog_text2|richtext }}
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto">
+                            <span class="material-symbols-outlined">{{ page.blog_icon3 }}</span>
+                        </div>
+                        <div class="uk-width-expand">
+                            {{ page.blog_text3|richtext }}
+                        </div>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="uk-width-1-1 uk-text-center uk-margin-small-top uk-text-large">
+
+                       {% for item in page.blog_category.all %}
+                       {{ item.category_name }} {% if item.pk != page.blog_category.last.pk  %} | {% endif %}
+                       {% endfor %}
+
+                </div>
+                <div class="uk-width-1-1 uk-text-center uk-margin-small-top">
+                       {% for item in page.blog_level.all %}
+                       {{ item.level_name }}{% if item.pk != page.blog_level.last.pk  %} | {% endif %}
+                       {% endfor %}
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include_block page.blog_body %}
 {% endblock content %}
