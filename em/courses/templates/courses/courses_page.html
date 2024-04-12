@@ -20,19 +20,21 @@
                             <h1>{{ page.course_name }}</h1>
                         </div>
                         <div class="uk-text-center">
+                            {% if page.course_subtitle %}
                             <h2>{{ page.course_subtitle }}</h2>
+                            {% endif  %}
                         </div>
                     </div>
                     <div class="uk-width-1-1 ">
                         <div class="uk-flex uk-flex-center">
-                            <a class="uk-button uk-button-default uk-margin-large-bottom uk-margin-small-top" href=""><span uk-icon="forward"> </span> Узнайте стоимость и расписание</a>
+                            <a class="uk-button uk-button-default uk-margin-large-bottom uk-margin-small-top" href="#section1" uk-scroll><span uk-icon="forward"> </span> Узнайте стоимость и расписание</a>
                         </div>
                     </div>
                     <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
                         <div class="uk-width-auto">
                             <span class="material-symbols-outlined">{{ page.course_icon1 }}</span>
                         </div>
-                        <div class="uk-width-expand">
+                        <div class="uk-width-expand uk-flex uk-flex-middle">
                             {{ page.course_text1|richtext }}
                         </div>
                     </div>
@@ -40,12 +42,12 @@
                         <div class="uk-width-auto">
                             <span class="material-symbols-outlined">{{ page.course_icon2 }}</span>
                         </div>
-                        <div class="uk-width-expand">
+                        <div class="uk-width-expand  uk-flex uk-flex-middle">
                             {{ page.course_text2|richtext }}
                         </div>
                     </div>
                     <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
-                        <div class="uk-width-auto">
+                        <div class="uk-width-auto uk-flex uk-flex-middle">
                             <span class="material-symbols-outlined">{{ page.course_icon3 }}</span>
                         </div>
                         <div class="uk-width-expand">

@@ -20,6 +20,14 @@ class HomePage(SeoMixin, Page):
     firstscreenh2 = models.CharField(max_length=255, null=True, blank=True)
     firstscreenbody = RichTextField(blank=True)
     firstscreencta = models.CharField(max_length=255, null=True, blank=True)
+    home_photo1 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
+    home_photo2 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True,
+        on_delete=models.SET_NULL, related_name='+'
+    )
 
     # Fileds for em stats
     statsh3 = models.CharField(max_length=255, null=True, blank=True)
@@ -67,6 +75,8 @@ class HomePage(SeoMixin, Page):
                 FieldPanel('firstscreenh2', heading='ПодЗаголовок h2'),
                 FieldPanel('firstscreenbody', heading='Текст'),
                 FieldPanel('firstscreencta', heading='Текст на кнопке'),
+                FieldPanel('home_photo1', heading='Фото 1'),
+                FieldPanel('home_photo2', heading='Фото 2'),
             ],
             heading="Поля для первого экрана",
         ),

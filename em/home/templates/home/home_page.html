@@ -13,22 +13,26 @@
     <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top">
         <div class="uk-container uk-container-large">
             <div class="uk-background-cover"
-                 style="background-image: url(/media/images/dis/bgredhoriz2.jpg);">
+                 style="background-image: url(/media/images/dis/bgredhoriz3.jpg);">
                     <div class="uk-grid-medium fstext" uk-grid>
-                        <div class="uk-width-1-1 uk-width-2-3@l uk-width-2-3@m">
+                        <div class="uk-width-1-1 uk-width-2-3@l uk-width-1-2@m">
                             <div class="uk-padding fstext">
                                 <h1 class="uk-margin-small">{{ page.firstscreenh1 }}</h1>
                                 <h2 class="uk-margin-small uk-margin-medium-bottom">{{ page.firstscreenh2 }}</h2>
+                                <div class="uk-flex uk-flex-center uk-hidden@m">
+                                    {% image page.home_photo1 fill-300x300 class="uk-border-circle" %}
+                                </div>
                                 {{ page.firstscreenbody|richtext }}
                                 <a class="uk-button uk-button-default uk-margin-medium-bottom uk-margin-medium-top" href=""><span uk-icon="forward"> </span> {{ page.firstscreencta }}</a>
 
                             </div>
 
                         </div>
-                        <div class="uk-width-1-1 uk-width-1-3@l uk-width-1-3@m">
-                            <div class="uk-background-cover uk-height-1-1"
+                        <div class="uk-width-1-1 uk-width-1-3@l uk-width-1-2@m">
+                            <div class="uk-background-cover uk-background-center-center uk-height-1-1"
                             style="background-image: url(/media/images/dis/zhannat1.png);">
                             </div>
+
                         </div>
                     </div>
             </div>

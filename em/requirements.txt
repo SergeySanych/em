@@ -4,4 +4,3 @@ psycopg2-binary==2.9.9
 wagtail-seo==2.4.1
 wagtail-modeladmin==2.0.0
 wagtailmenus==3.1.9
-

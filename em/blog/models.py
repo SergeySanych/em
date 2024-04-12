@@ -58,6 +58,28 @@ class Categories(models.Model):
         return self.category_name
 
 
+class BlogListPage(SeoMixin, Page):
+    promote_panels = SeoMixin.seo_panels
+    bl_header = models.CharField(max_length=255, null=True, blank=True)
+    bl_text = RichTextField(blank=True)
+
+    def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse-chron
+        context = super().get_context(request)
+        articles = BlogPage.objects.all().live().filter(blog_blog=True)
+        context['articles'] = articles
+        return context
+
+    content_panels = Page.content_panels + [
+        MultiFieldPanel(
+            [
+                FieldPanel('bl_header', heading='Заголовок H1 '),
+                FieldPanel('bl_text', heading='Текст страницы'),
+            ],
+        ),
+    ]
+
+
 class BlogPage(SeoMixin, Page):
     promote_panels = SeoMixin.seo_panels
 

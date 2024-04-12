@@ -153,6 +153,28 @@ class FormPage(AbstractEmailForm):
     ]
 
 
+class CoursesListPage(SeoMixin, Page):
+    promote_panels = SeoMixin.seo_panels
+    cl_header = models.CharField(max_length=255, null=True, blank=True)
+    cl_text = RichTextField(blank=True)
+
+    def get_context(self, request):
+        # Update context to include only published posts, ordered by reverse-chron
+        context = super().get_context(request)
+        courses = self.get_children().all().live().order_by('first_published_at')
+        context['courses'] = courses
+        return context
+
+    content_panels = Page.content_panels + [
+        MultiFieldPanel(
+            [
+                FieldPanel('cl_header', heading='Заголовок H1 '),
+                FieldPanel('cl_text', heading='Текст страницы'),
+            ],
+        ),
+    ]
+
+
 class CoursesPage(SeoMixin, Page):
     promote_panels = SeoMixin.seo_panels
 
