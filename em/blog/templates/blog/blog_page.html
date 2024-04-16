@@ -14,9 +14,9 @@
          {% image page.blog_bgimage fill-1920x800 as tmp_bg %}
          style="background-image: url( {{ tmp_bg.url }} );">
         <div class="uk-container uk-container-large" >
-            <div class="uk-padding-large courses-fs" uk-grid>
+            <div class="uk-padding uk-padding-remove-horizontal courses-fs" uk-grid>
                 <div class="uk-width-1-1 ">
-                    <div class="uk-text-center uk-padding-remove-top uk-padding">
+                    <div class="uk-text-center uk-padding-small">
                         <h1>{{ page.blog_title_h1 }}</h1>
                     </div>
                     <div class="uk-text-center">
@@ -25,24 +25,24 @@
                 </div>
             {% if page.blog_blog  == False %}
                 {% if page.blog_icon1 %}
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
-                        <div class="uk-width-auto">
+             <div class="uk-width-1-1 uk-width-1-3@m uk-padding uk-padding-remove-bottom uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto uk-flex uk-flex-middle">
                             <span class="material-symbols-outlined">{{ page.blog_icon1 }}</span>
                         </div>
                         <div class="uk-width-expand uk-flex uk-flex-middle">
                             {{ page.blog_text1|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
-                        <div class="uk-width-auto">
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-padding uk-grid-small uk-padding-remove-bottom  uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto uk-flex uk-flex-middle">
                             <span class="material-symbols-outlined">{{ page.blog_icon2 }}</span>
                         </div>
                         <div class="uk-width-expand uk-flex uk-flex-middle">
                             {{ page.blog_text2|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
-                        <div class="uk-width-auto">
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-grid-small uk-padding uk-margin-remove-top uk-padding-remove-bottom " uk-grid>
+                        <div class="uk-width-auto uk-flex uk-flex-middle">
                             <span class="material-symbols-outlined">{{ page.blog_icon3 }}</span>
                         </div>
                         <div class="uk-width-expand uk-flex uk-flex-middle">

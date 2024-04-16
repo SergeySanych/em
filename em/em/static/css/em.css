@@ -167,6 +167,8 @@ p[data-block-key="5b7qd"] {
   text-transform: uppercase;
   transition: 0.1s ease-in-out;
   transition-property: color, background-color, border-color;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 /*
@@ -244,6 +246,7 @@ p[data-block-key="5b7qd"] {
  */
 .why {
         line-height: 1.2;
+    padding: 40px;
 }
 
 .why h3 {
@@ -302,6 +305,7 @@ p[data-block-key="5b7qd"] {
 
 .courseoverlay {
     background-color: #003049;
+    min-height: 330px;
 }
 
 .courseoverlay h4 {
@@ -311,6 +315,7 @@ p[data-block-key="5b7qd"] {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 500;
     font-style: normal;
+    min-height: 80px;
 }
 
 .courseoverlay p {
@@ -320,11 +325,13 @@ p[data-block-key="5b7qd"] {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-style: normal;
+
 }
 
 .uk-transition-slide-bottom {
-    --uk-translate-y: 62%;
+    --uk-translate-y: 200px;
 }
+
 
 .uk-transition-fade, [class*='uk-transition-scale'], [class*='uk-transition-slide'] {
     opacity: 1;
@@ -406,7 +413,7 @@ p[data-block-key="5b7qd"] {
     color: #FDF0D5;
     font-size: 2.5rem;
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -422,7 +429,7 @@ p[data-block-key="5b7qd"] {
 .courses-fs a.uk-button {
   padding: 10px 40px;
   font-size: 1.25rem;
-  line-height: 38px;
+  line-height: 1.5;
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.1s ease-in-out;
@@ -534,11 +541,11 @@ p[data-block-key="5b7qd"] {
     margin-bottom: 15px;
 }
 
-.rightcolumn > ul {
+.rightcolumn ul {
     list-style-type: none; /* Убираем стандартные маркеры */
 }
 
-.rightcolumn > ul > li::before {
+.rightcolumn ul > li::before {
     content: "\2713"; /* Устанавливаем желаемый символ в качестве маркера */
     font-size: 1.125rem;
     color: #C1121F; /* Цвет маркера (можно не устанавливать) */
@@ -550,6 +557,21 @@ p[data-block-key="5b7qd"] {
     margin-right: 20px; /* отступ справа от изображения */
     margin-bottom: 20px; /* отступ снизу от изображения */
   }
+
+.reviewstext li {
+    margin-bottom: 15px;
+}
+
+.reviewstext ul {
+    list-style-type: none; /* Убираем стандартные маркеры */
+}
+
+.reviewstext ul > li::before {
+    content: "\2713"; /* Устанавливаем желаемый символ в качестве маркера */
+    font-size: 1.125rem;
+    color: #C1121F; /* Цвет маркера (можно не устанавливать) */
+    margin-right: 10px; /* Отступ между маркером и текстом (можно не устанавливать) */
+}
 
 .modalform .uk-button-default {
   background-color: #C1121F;
@@ -595,6 +617,16 @@ p[data-block-key="5b7qd"] {
     font-style: normal;
     margin: 0;
 }
+
+.bloglist h1 {
+    line-height: 1.2;
+    color: #003049;
+    font-size: 2.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 .bloglist h3 {
     line-height: 1.2;
@@ -693,7 +725,7 @@ p[data-block-key="5b7qd"] {
 .uk-navbar-dropdown {
     /*display: none;
     position: absolute;*/
-    width: 240px;
+    width: 300px;
     padding: 20px;
     background: #003049;
     color: #FDF0D5;
@@ -773,21 +805,84 @@ h1  {
 
 /* Tablet landscape and bigger */
 @media (max-width: 640px) {
-.fstext > h1 {
-    line-height: 1.2;
-    color: #FDF0D5;
-    font-size: 1.5rem;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
+    .fstext > h1 {
+        line-height: 1.2;
+        color: #FDF0D5;
+        font-size: 1.5rem;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
 
-.fstext > h2 {
-    line-height: 1.2;
-    color: #FDF0D5;
-    font-size: 1.25rem;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
+    .fstext > h2 {
+        font-size: 1.25rem;
+
+    }
+
+    .fstext {
+        font-size: 1rem;
+    }
+
+    .fstext a.uk-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+
+
+    .why h3 {
+
+        font-size: 1.5rem;
+    }
+
+    .why {
+        line-height: 1.2;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .coursestext h3 {
+        font-size: 1.5rem;
+    }
+
+    .reviewstext h3 {
+        font-size: 1.5rem;
+
+    }
+    .banner {
+        line-height: 1.2;
+        color: #FDF0D5;
+        font-size: 1.75rem;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .subheader {
+        line-height: 1.2;
+    }
+
+    .headerphone {
+        font-size: 1.75rem;
+    }
+
+    .courses-fs h1 {
+        font-size: 2rem;
+    }
+
+    .courses-fs h2 {
+        font-size: 1.25rem;
+    }
+
+    .courses-fs a.uk-button {
+        padding: 10px 20px;
+        font-size: 1.125rem;
+    }
+
+    .bloglist h1 {
+        font-size: 1.75rem;
+    }
+
 }

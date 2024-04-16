@@ -14,7 +14,7 @@
              {% image page.course_bgimage fill-1920x800 as tmp_bg %}
              style="background-image: url( {{ tmp_bg.url }} );">
             <div class="uk-container uk-container-large" >
-                <div class="uk-padding-large courses-fs" uk-grid>
+                <div class="uk-padding-small courses-fs" uk-grid>
                     <div class="uk-width-1-1 ">
                         <div class="uk-text-center">
                             <h1>{{ page.course_name }}</h1>
@@ -27,30 +27,30 @@
                     </div>
                     <div class="uk-width-1-1 ">
                         <div class="uk-flex uk-flex-center">
-                            <a class="uk-button uk-button-default uk-margin-large-bottom uk-margin-small-top" href="#section1" uk-scroll><span uk-icon="forward"> </span> Узнайте стоимость и расписание</a>
+                            <a class="uk-button uk-button-default uk-margin-bottom  uk-margin-small-top" href="#section1" uk-scroll><span uk-icon="forward"> </span> Узнайте стоимость и расписание</a>
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
-                        <div class="uk-width-auto">
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-padding-small uk-padding-remove-bottom uk-grid-small uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto uk-flex uk-flex-middle">
                             <span class="material-symbols-outlined">{{ page.course_icon1 }}</span>
                         </div>
                         <div class="uk-width-expand uk-flex uk-flex-middle">
                             {{ page.course_text1|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
-                        <div class="uk-width-auto">
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-padding-small uk-grid-small uk-padding-remove-bottom  uk-margin-remove-top" uk-grid>
+                        <div class="uk-width-auto uk-flex uk-flex-middle">
                             <span class="material-symbols-outlined">{{ page.course_icon2 }}</span>
                         </div>
                         <div class="uk-width-expand  uk-flex uk-flex-middle">
                             {{ page.course_text2|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-grid-small uk-padding-small uk-margin-remove-top uk-padding-remove-bottom " uk-grid>
                         <div class="uk-width-auto uk-flex uk-flex-middle">
                             <span class="material-symbols-outlined">{{ page.course_icon3 }}</span>
                         </div>
-                        <div class="uk-width-expand">
+                        <div class="uk-width-expand uk-flex uk-flex-middle">
                             {{ page.course_text3|richtext }}
                         </div>
                     </div>
@@ -73,21 +73,21 @@
  <!-- Reviews -->
     <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top uk-margin-medium-top">
         <div class="uk-container uk-container-large">
-            <div class="blueborder reviewstext uk-padding">
+            <div class="blueborder  uk-padding">
                     <div uk-grid>
                         <div class="uk-margin-remove-top uk-width-1-1 ">
-                            <div>
+                            <div class="reviewstext">
                                 <h3>Отзывы наших студентов</h3>
                             </div>
                         </div>
-                        <div class="">
+                        <div class="uk-width-1-1 ">
                             {% with reviews=page.course_reviews.all %}
                                 {% if reviews %}
-                                    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider="autoplay: false; autoplay-interval: 3000; pause-on-hover: true ">
+                                    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider="autoplay: true; autoplay-interval: 3000; pause-on-hover: true ">
                                         <ul class="uk-slider-items uk-child-width-1-1" uk-grid>
                                             {% for review in reviews %}
                                             <li>
-                                                <div uk-grid>
+                                                <div class="reviewstext" uk-grid>
                                                     <div class="uk-width-1-3@m">
                                                         <div class="uk-flex uk-flex-center">
                                                             {% image review.review_photo fill-250x250 class="uk-border-circle" %}

@@ -23,7 +23,7 @@
                                     {% image page.home_photo1 fill-300x300 class="uk-border-circle" %}
                                 </div>
                                 {{ page.firstscreenbody|richtext }}
-                                <a class="uk-button uk-button-default uk-margin-medium-bottom uk-margin-medium-top" href=""><span uk-icon="forward"> </span> {{ page.firstscreencta }}</a>
+                                <a class="uk-button uk-button-default" href="/onlajn-kursy/registraciya-na-master-klass/"><span uk-icon="forward"> </span> {{ page.firstscreencta }}</a>
 
                             </div>
 
@@ -46,13 +46,13 @@
             <div class="blueborder">
                     <div uk-grid>
                         <div class="uk-margin-remove-top uk-width-1-1 ">
-                            <div class="uk-padding statstext">
+                            <div class="uk-padding  statstext">
                                 <h3>{{ page.statsh3 }}</h3>
                             </div>
                         </div>
                         <div class="uk-margin-remove-top uk-width-1-1 uk-width-1-3@m">
 
-                            <div class="uk-padding  statstext">
+                            <div class="uk-padding uk-padding-remove-top statstext">
                                 {{ page.statsbody|richtext }}
 
                             </div>
@@ -98,8 +98,8 @@
         <div class="uk-background-cover"
              style="background-image: url(/media/images/dis/lightbluebg.jpg);">
             <div class="uk-container uk-container-large" >
-                <div class="uk-padding why" uk-grid>
-                    <div class="uk-width-1-1 ">
+                <div class="why" uk-grid>
+                    <div class="uk-width-1-1">
                         <div>
                             <h3>{{ page.whyh3 }}</h3>
                         </div>
@@ -107,7 +107,7 @@
                             {{ page.whybody|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-grid-small uk-margin-remove-top uk-padding-small" uk-grid>
                         <div class="uk-width-auto">
                             {% image page.why1image fill-90x90 %}
                         </div>
@@ -115,7 +115,7 @@
                             {{ page.why1|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-grid-small uk-margin-remove-top uk-padding-small" uk-grid>
                         <div class="uk-width-auto">
                             {% image page.why2image fill-90x90 %}
                         </div>
@@ -123,7 +123,7 @@
                             {{ page.why2|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-3 uk-grid-small uk-margin-remove-top" uk-grid>
+                    <div class="uk-width-1-1 uk-width-1-3@m uk-grid-small uk-margin-remove-top uk-padding-small" uk-grid>
                         <div class="uk-width-auto">
                             {% image page.why3image fill-90x90 %}
                         </div>
@@ -131,7 +131,7 @@
                             {{ page.why3|richtext }}
                         </div>
                     </div>
-                    <div class="uk-width-1-1 ">
+                    <div class="uk-width-1-1 uk-margin-remove-top">
                         <div class="uk-text-center whymulti">
                             <sp class="cRed">И самое важное,</sp> все это нужно умножить на <sp class="cRed">30 летний опыт</sp> преподавания Жаннат Куанышевны.
                         </div>
@@ -152,13 +152,13 @@
             <div>
                 {% with courses=page.home_courses.all %}
                     {% if courses %}
-                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: false; autoplay-interval: 3000; pause-on-hover: true ">
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="autoplay: true; autoplay-interval: 3000; pause-on-hover: true ">
                             <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-3@m uk-child-width-1-2@s" uk-grid>
                                 {% for course in courses %}
                                 <li>
                                     <a href="{% pageurl course %}">
                                         <div class="uk-panel uk-transition-toggle">
-                                            {% image course.course_titleimage fill-520x600 %}
+                                            {% image course.course_titleimage fill-500x750 %}
                                                 <div class="courseoverlay uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
                                                     <h4>{{ course.course_name }}</h4>
                                                     <p class="uk-margin-remove">{{ course.course_shorttext|richtext }}</p>
@@ -184,21 +184,21 @@
  <!-- Reviews -->
     <div class="uk-section uk-section-default uk-section-xsmall uk-padding-remove-top uk-margin-medium-top">
         <div class="uk-container uk-container-large">
-            <div class="blueborder reviewstext uk-padding">
+            <div class="blueborder  uk-padding">
                     <div uk-grid>
                         <div class="uk-margin-remove-top uk-width-1-1 ">
-                            <div>
+                            <div class="reviewstext">
                                 <h3>Отзывы наших студентов</h3>
                             </div>
                         </div>
-                        <div class="">
+                        <div class="uk-width-1-1 ">
                             {% with reviews=page.home_reviews.all %}
                                 {% if reviews %}
-                                    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider="autoplay: false; autoplay-interval: 3000; pause-on-hover: true ">
+                                    <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slider="autoplay: true; autoplay-interval: 3000; pause-on-hover: true ">
                                         <ul class="uk-slider-items uk-child-width-1-1" uk-grid>
                                             {% for review in reviews %}
                                             <li>
-                                                <div uk-grid>
+                                                <div class="reviewstext" uk-grid>
                                                     <div class="uk-width-1-3@m">
                                                         <div class="uk-flex uk-flex-center">
                                                             {% image review.review_photo fill-250x250 class="uk-border-circle" %}
@@ -244,7 +244,7 @@
                                 <p class="banner uk-margin-small">{{ page.bannertext }}</p>
                             </div>
                              <div class="uk-flex uk-flex-center fstext">
-                                <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-top" href=""><span uk-icon="forward"> </span> {{ page.bannercta }}</a>
+                                <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-top" href="/onlajn-kursy/registraciya-na-master-klass/"><span uk-icon="forward"> </span> {{ page.bannercta }}</a>
                             </div>
 
                         </div>
