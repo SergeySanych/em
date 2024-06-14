@@ -263,7 +263,7 @@ class MasterclassPage(SeoMixin, AbstractEmailForm):
     promote_panels = SeoMixin.seo_panels
 
     def render_landing_page(self, request, form_submission=None, *args, **kwargs):
-        return redirect("/online-shkola/registraciya-na-master-klass/master-class/", permanent=False)
+        return redirect("/onlajn-kursy/registraciya-na-master-klass/master-class/", permanent=False)
 
     # Reviews for carusel
     mc_reviews = ParentalManyToManyField('reviews.ReviewsPage', blank=True)
